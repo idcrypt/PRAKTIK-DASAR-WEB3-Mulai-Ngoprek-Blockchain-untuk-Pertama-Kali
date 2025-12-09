@@ -1,7 +1,8 @@
-# Masuk Web3 Tanpa Drama Blockchain Basics Buat Semua Orang
+# PRAKTIK DASAR WEB3: Mulai Ngoprek Blockchain untuk Pertama Kali
+
+Lanjutan dari Buku Masuk Web3 Tanpa Drama: Blockchain Basics Buat Semua Orang
 
 Hariyanto
-
 
 2025
 
