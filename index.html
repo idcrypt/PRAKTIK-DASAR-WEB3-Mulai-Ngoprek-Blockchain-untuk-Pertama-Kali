@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-  <title>Masuk Web3 Tanpa Drama Blockchain Basics Buat Semua Orang</title>
+  <title>PRAKTIK DASAR WEB3: Mulai Ngoprek Blockchain untuk Pertama Kali</title>
 
   <!--
     Catatan: file ini sengaja verbose (banyak komentar & struktur) agar mudah dibaca.
-    Total halaman diatur oleh TOTAL_PAGES (default 98).
+    Total halaman diatur oleh TOTAL_PAGES (default 145).
     Pastikan:
-      - images/page1.png ... images/page98.png tersedia
+      - images/page1.png ... images/page145.png tersedia
       - sounds/flip.mp3 tersedia
       - js/jquery.min.js dan js/turn.min.js tersedia
   -->
@@ -256,7 +256,7 @@
       <div style="display:flex;gap:10px;align-items:center">
         <button id="fullscreenToggle" class="btn secondary">Toggle Fullscreen</button>
         <button id="themeToggle" class="btn secondary">🌙 Theme</button>
-        <div id="pageInfo" class="info">Halaman 1 / 98</div>
+        <div id="pageInfo" class="info">Halaman 1 / 145</div>
       </div>
     </header>
 
@@ -277,7 +277,7 @@
 
       <div class="goto">
         <label style="color:var(--muted)">Ke halaman</label>
-        <input id="gotoInput" type="number" min="1" max="98" value="1">
+        <input id="gotoInput" type="number" min="1" max="145" value="1">
         <button id="gotoBtn" class="btn">Go</button>
       </div>
     </div>
@@ -308,11 +308,11 @@
     /* =========================
        CONFIG & STATE
        ========================= */
-    const TOTAL_PAGES = 98;     // sesuaikan kalau berubah
+    const TOTAL_PAGES = 145;     // sesuaikan kalau berubah
     const PER_BLOCK = 10;        // pagination per block
     const A4_ASPECT = 1.41421356; // tinggi/lebar ≈ 297/210
-    const MAX_BOOK_WIDTH = 98; // maksimal lebar book (adjustable)
-    const PRELOAD_COUNT = 98;    // halaman pertama yang dipreload sebelum sembunyikan loader
+    const MAX_BOOK_WIDTH = 145; // maksimal lebar book (adjustable)
+    const PRELOAD_COUNT = 145;    // halaman pertama yang dipreload sebelum sembunyikan loader
 
     let currentPage = 1;         // halaman aktif (1-based)
     let currentBlock = 1;
@@ -713,7 +713,7 @@
     // Build juz navigation based on TOTAL_PAGES distribution (even split) — user can adjust mapping if needed
     function computeJuzStarts(){
       const arr = [];
-      const per = TOTAL_PAGES / 6;
+      const per = TOTAL_PAGES / 10;
       for(let i=0;i<10;i++){
         const page = Math.max(1, Math.round(i * per) + 1); // 1-based
         arr.push(page);
@@ -724,19 +724,20 @@
     // Manual juz start mapping — sesuai mushaf Madinah (604 halaman)
 // Sesuaikan nomor halamannya dengan versi PDF / image kamu
 const juzStarts = [
-  7,  // Juz 2
-  21,  // Juz 3
-  36,  // Juz 4
-  50,
-  65,
-  78
+  8,  // Juz 2
+  25,  // Juz 3
+  39,  // Juz 4
+  52,
+  64,
+  80,
+  97
 ];
 
 
     function buildJuzNav(){
       const $nav = $("#juzNav");
       $nav.empty();
-      for(let i=1;i<=6;i++){
+      for(let i=1;i<=7;i++){
         const btn = $("<button>").text(`BAB ${i}`).on("click", ()=>goTo(juzStarts[i-1]));
         $nav.append(btn);
       }
